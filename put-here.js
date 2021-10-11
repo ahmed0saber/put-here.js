@@ -7,8 +7,8 @@ function includeHTML() {
             xhttp = new XMLHttpRequest(); /*just abbreviation*/
             xhttp.onreadystatechange = function() { /*on file changed or detected for first time*/
                 if (this.readyState == 4) { /*on file fully loaded*/
-                    if (this.status == 200) {elmnt.innerHTML = this.responseText;} /*Success => not performed in the first function call*/
-                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";} /*Failure*/
+                    if (this.status == 200) {els[i].innerHTML = this.responseText;} /*Success => not performed in the first function call*/
+                    if (this.status == 404) {els[i].innerHTML = "Page not found.";} /*Failure*/
                     els[i].removeAttribute("file"); /*remove the attribute not to load it again*/
                     includeHTML(); /*again till the file is fully loaded*/
                 }
