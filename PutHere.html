@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>PUT-HERE-JS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            width: 100%;
+            background-color: #eee;
+            display: flex;
+            flex-direction: column;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+        header {
+            color: #00b;
+            position: fixed;
+            top: 0;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 54px;
+            font-size: 15px;
+            position: relative;
+        }
+        header h1 {
+            font-size: 1.6em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition-duration: 0.2s;
+        }
+        header h1:hover{
+            opacity: 0.9;
+        }
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        .right img {
+            width: 100%;
+        }
+        .left {
+            max-width: 45%;
+            padding: 40px 64px;
+        }
+        .right {
+            padding: 40px 48px;
+        }
+        .title {
+            color: #00b;
+            font-size: 2em;
+            width: 50%;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 45px;
+        }
+        .msg {
+            color: #00bc;
+            font-size: 1.1em;
+            letter-spacing: 0.7px;
+            line-height: 32px;
+            margin-bottom: 45px;
+        }
+        button.cta {
+            border: 1px solid #000;
+            outline: none;
+            background-color: #00b;
+            color: #fff;
+            font-size: 16px;
+            height: 60px;
+            width: 250px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(70, 70, 70, 0.1),
+            0 7px 8px rgba(70, 70, 70, 0.08);
+            cursor: pointer;
+            transition-duration: 0.2s;
+        }
+        button.cta:hover {
+            opacity: 0.85;
+        }
+        #url{
+            width: 200px;
+            height: 35px;
+            margin: 2px;
+            padding: 2px;
+            outline: none;
+            border: none;
+            background-color: #fffb;
+            color: #00bc;
+        }
+        a{
+            color: #00b;
+            font-weight: bold;
+        }
+        a:hover{
+            opacity: 0.85;
+        }
+
+
+
+        @media (max-width:800px) {
+            header,
+            .left,
+            .right {
+                padding-left: 35px;
+                padding-right: 40px;
+            }
+        }
+        @media (max-width: 650px) {
+            .main {
+                flex-direction: column;
+            }
+            .left,
+            .right {
+                width: 100%;
+                max-width: 100%;
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .left {
+                font-size: 0.8em;
+            }
+            .left * {
+                width: 95%;
+                margin-bottom: 32px;
+                text-align: center;
+            }
+            button.cta {
+                max-width: 60%;
+            }
+            .right img {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PUT-HERE.js</h1>
+    </header>
+    <section class="main">
+        <section class="left">
+            <p class="title">New Way To Include HTML Files Into Your Page</p>
+            <p class="msg">Here you can start quickly by using the library url <input type="text" id="url" value="https://ahmed0saber.github.io/put-here.js/put-here.js" disabled></input> or download the file from <a href="https://github.com/ahmed0saber/put-here.js" target="_blank">GitHub</a>...!</p>
+            <button class="cta" onclick="myFunction()">Quick Start</button>
+        </section>
+        <section class="right">
+            <img src="shot.svg" alt="Landing image">
+        </section>
+    </section>
+</body>
+<script>
+    function myFunction() {
+        var copyText = document.getElementById("url");
+        copyText.select(); 
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+    }
+    </script>
+</html>
